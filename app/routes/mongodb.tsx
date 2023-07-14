@@ -1,6 +1,7 @@
-import { PrismaClient, Product } from "@prisma/client";
+// import { PrismaClient, Product } from "@prisma/client";
+import { Product } from "@prisma/client";
 import { useLoaderData } from "@remix-run/react";
-
+import { db } from "~/database/database.server";
 //This sends data to database remix1
 //  This is a writer query
 
@@ -20,6 +21,11 @@ import { useLoaderData } from "@remix-run/react";
 //   const data = await prisma.product.findMany();
 //   return { data };
 // };
+
+export const loader = async () => {
+  const data = await db.product.findMany();
+  return { data };
+};
 
 // This is the client
 
