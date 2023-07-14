@@ -1,6 +1,8 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient, Product } from "@prisma/client";
+import { useLoaderData } from "@remix-run/react";
 
 //This sends data to database remix1
+//  This is a writer query
 
 // export const loader = async () => {
 //   const prisma = await new PrismaClient();
@@ -11,17 +13,26 @@ import { PrismaClient } from "@prisma/client";
 // };
 
 // This consumes data from  database remix1
+//  This is a read query
 
 export const loader = async () => {
   const prisma = await new PrismaClient();
-
-  return null;
+  const data = await prisma.product.findMany();
+  return { data };
 };
 
+// This is the client
+
 export default function Mongodb() {
+  const { data } = useLoaderData<{ data: Product[] }>();
+
   return (
     <article>
       <div>This page controls mongo database</div>
+      <div>This is the database consumed</div>
+      {data.map((p) => (
+        <p key={p.id}>{p.title}</p>
+      ))}
     </article>
   );
 }
