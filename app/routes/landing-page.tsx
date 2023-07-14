@@ -1,4 +1,5 @@
 import { useActionData, useLoaderData } from "@remix-run/react";
+import styles from "~/styles/styles.css";
 
 export const loader = async () => {
   const data = await (await fetch("https://rickandmortyapi.com/api/character/")).json();
@@ -19,12 +20,16 @@ export const meta = () => {
   ];
 };
 
+export const links = () => {
+  return [{ rel: "stylesheet", href: styles }];
+};
+
 export default function LandingPage() {
   const dataLoader = useLoaderData();
   const formDataAction = useActionData();
   return (
     <article>
-      <div>Hola mundo</div>
+      <h1>Hola mundo</h1>
       <form method="post">
         <label>
           Email
