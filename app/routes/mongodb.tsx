@@ -12,14 +12,14 @@ import { useLoaderData } from "@remix-run/react";
 //   return null;
 // };
 
-// This consumes data from  database remix1
+// This consumes data from  database remix1 (Not recomended for development)
 //  This is a read query
 
-export const loader = async () => {
-  const prisma = await new PrismaClient();
-  const data = await prisma.product.findMany();
-  return { data };
-};
+// export const loader = async () => {
+//   const prisma = await new PrismaClient();
+//   const data = await prisma.product.findMany();
+//   return { data };
+// };
 
 // This is the client
 
