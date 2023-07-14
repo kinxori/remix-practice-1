@@ -1,7 +1,7 @@
 import type { V2_MetaFunction } from "@remix-run/node";
 
 export const meta: V2_MetaFunction = () => {
-  return [{ title: "idk" }, { name: "description", content: "Welcome to Remix!" }];
+  return [{ title: "Home" }, { name: "description", content: "Welcome to Remix!" }];
 };
 
 export default function Index() {

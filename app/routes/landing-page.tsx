@@ -11,6 +11,14 @@ export const action = async ({ request }) => {
   return null;
 };
 
+export const meta = () => {
+  return [
+    {
+      title: "Landing Page",
+    },
+  ];
+};
+
 export default function LandingPage() {
   const dataLoader = useLoaderData();
   const formDataAction = useActionData();
