@@ -3,10 +3,15 @@ export const loader = async () => {
   return null;
 };
 
+export const action = async () => {
+  return null;
+};
+
 export default function LandingPage() {
   return (
     <article>
       <div>Hola mundo</div>
+      <form></form>
     </article>
   );
 }
