@@ -10,8 +10,8 @@ const prisma = new PrismaClient();
 const getProduct = () => {
   const name = faker.commerce.productName();
   const product = {
-    slug: name,
-    title: faker.commerce.productName(),
+    slug: faker.helpers.slugify(name),
+    title: name,
     body: faker.commerce.productDescription(),
     price: faker.commerce.price(),
     images: [
