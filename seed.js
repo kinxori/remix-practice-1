@@ -50,7 +50,7 @@ const saveInDB = async () => {
 
 // ----With 1 liner
 
-const seed = async () => await Promise.all([...Array(200).keys()].map(saveInDB));
+const seed = async () => await Promise.all([...Array(4).keys()].map(saveInDB));
 
 //We callback seed function to invoke every promise
 
