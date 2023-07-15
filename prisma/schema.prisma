@@ -17,6 +17,6 @@ slug String @unique
 title String
 body String
 price String
-images String[] 
+image String[] 
 
 }
