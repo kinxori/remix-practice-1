@@ -1,5 +1,12 @@
-import { faker } from "@faker-js/faker";
-import { PrismaClient } from "@prisma/client";
+//Using commonjs to import modules
+
+const faker = require("@faker-js/faker").faker;
+const PrismaClient = require("@prisma/client").PrismaClient;
+
+// These are EsMoludes but dont seem to be working
+
+// import { faker } from "@faker-js/faker";
+// import { PrismaClient } from "@prisma/client";
 
 // Creating new Prisma client for whole seed file
 
@@ -38,7 +45,7 @@ const saveInDB = async () => {
 // ----With Block
 
 const seed = async () => {
-  const promises = [...Array(10).keys()].map(saveInDB);
+  const promises = [...Array(100).keys()].map(saveInDB);
   await Promise.all(promises);
 };
 
