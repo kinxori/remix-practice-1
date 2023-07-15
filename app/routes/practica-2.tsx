@@ -46,7 +46,7 @@ export default function Mongodb() {
 export const meta = () => {
   return [
     {
-      title: "Mongo Practice",
+      title: "Practica 2",
     },
   ];
 };

@@ -5,3 +5,5 @@ export default function Practice3() {
     </article>
   );
 }
+
+export const meta = () => [{ title: "Practica 3" }];

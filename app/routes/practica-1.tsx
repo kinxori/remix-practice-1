@@ -21,7 +21,7 @@ export const action = async ({ request }: any) => {
 export const meta = () => {
   return [
     {
-      title: "Landing Page",
+      title: "Practica 1",
     },
   ];
 };
