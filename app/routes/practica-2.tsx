@@ -23,22 +23,25 @@ import { db } from "~/database/db.server";
 // };
 
 export const loader = async () => {
-  const data = await db.product.findMany();
-  return { data };
+  // const data = await db.product.findMany(); //commented because we dont consume anything
+  return null; //return null to avoid problems
 };
 
 // This is the client
 
 export default function Mongodb() {
-  const { data } = useLoaderData<{ data: Product[] }>();
+  // const { data } = useLoaderData<{ data: Product[] }>(); //Commented because we dont use it for now
 
   return (
     <article>
       <div>This page controls mongo database</div>
-      <div>This is the database consumed</div>
-      {data.map((p) => (
+      <div>
+        This is the database consumed
+        <p>The map is commented </p>
+      </div>
+      {/* {data.map((p) => (
         <p key={p.id}>{p.title}</p>
-      ))}
+      ))} */}
     </article>
   );
 }
