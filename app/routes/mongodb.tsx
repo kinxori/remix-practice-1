@@ -42,3 +42,11 @@ export default function Mongodb() {
     </article>
   );
 }
+
+export const meta = () => {
+  return [
+    {
+      title: "Mongo Practice",
+    },
+  ];
+};

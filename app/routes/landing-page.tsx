@@ -10,7 +10,7 @@ export const loader = async () => {
 
 // Action to recieve data from Form
 
-export const action = async ({ request }) => {
+export const action = async ({ request }: any) => {
   const formData = await request.formData();
   console.log("data ", formData.get("email"));
   return null;
