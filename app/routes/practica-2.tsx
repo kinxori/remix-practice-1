@@ -1,7 +1,7 @@
 // import { PrismaClient, Product } from "@prisma/client";
 import { Product } from "@prisma/client";
 import { useLoaderData } from "@remix-run/react";
-import { db } from "~/database/database.server";
+import { db } from "~/database/db.server";
 //This sends data to database remix1
 //  This is a writer query
 
