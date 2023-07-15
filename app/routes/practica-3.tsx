@@ -17,15 +17,17 @@ export default function Practice3() {
   return (
     <article>
       <h1> Practica vista de lista y vista de detalle</h1>
-
-      {}
-      <div>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
         {data.map((product: any) => (
-          <>
-            <img src={product.image[0]} alt="idk"></img>
+          <div key={product.id} style={{ width: "200px" }}>
+            <img
+              style={{ width: "100%", objectFit: "contain" }}
+              src={product.image[0]}
+              alt="idk"
+            ></img>
             <h3>{product.title}</h3>
             <h3>{product.price}</h3>
-          </>
+          </div>
         ))}
       </div>
     </article>
