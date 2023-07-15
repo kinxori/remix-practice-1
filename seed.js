@@ -14,7 +14,13 @@ const getProduct = () => {
     title: faker.commerce.productName(),
     body: faker.commerce.productDescription(),
     price: faker.commerce.price(),
-    image: faker.image.url(),
+    images: [
+      faker.image.url(),
+      faker.image.url(),
+      faker.image.url(),
+      faker.image.url(),
+      faker.image.url(),
+    ],
   };
   return product;
 };
