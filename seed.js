@@ -35,7 +35,7 @@ const getProduct = () => {
 // sending the data model to prisma cliente and to mongo
 
 const saveInDB = async () => {
-  return prisma.product.createMany({
+  return prisma.idk.createMany({
     data: getProduct(),
   });
 };
@@ -50,7 +50,7 @@ const saveInDB = async () => {
 
 // ----With 1 liner
 
-const seed = async () => await Promise.all([...Array(16).keys()].map(saveInDB));
+const seed = async () => await Promise.all([...Array(10).keys()].map(saveInDB));
 
 //We callback seed function to invoke every promise
 

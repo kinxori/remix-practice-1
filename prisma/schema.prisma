@@ -20,3 +20,14 @@ price String
 image String[] 
 
 }
+
+model Idk {
+
+id String @id @default(auto()) @map("_id") @db.ObjectId
+slug String @unique 
+title String
+body String
+price String
+image String[] 
+
+}
