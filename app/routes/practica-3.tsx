@@ -10,14 +10,15 @@ import favIcon from "~/assets/new-logo-kinxori.ico";
 
 export const loader = async () => {
   const data = await db.product.findMany({
-    // select: {          //This is having some errors with "price", it saying it doesnt exist even tho it loades the value
-    //   title: true,
-    //   image: true,
-    //   slug: true,
-    //   id: true,
-    //   price: true,
-    // },
-    take: 15,
+    select: {
+      //This is having some errors with "price", it saying it doesnt exist even tho it loades the value
+      title: true,
+      image: true,
+      slug: true,
+      id: true,
+      price: true,
+    },
+    take: 500, // Commented to consume all data
   });
   return { data };
 };
@@ -26,6 +27,25 @@ export default function Practice3() {
   const { data }: any = useLoaderData();
   const [min, setMin] = useState(0);
   const [max, setMax] = useState(15);
+
+  const handlePastPage = () => {
+    if (min >= 15) {
+      setMin(min - 15);
+    } else {
+      setMin(min);
+    }
+  };
+
+  const handleNextPage = () => {
+    if (max >= 15) {
+      setMax(max + 15);
+    } else if (max >= 500) {
+      setMax(max);
+    }
+  };
+
+  console.log("aaa", min);
+  console.log("fasdf", max);
 
   return (
     <>
@@ -66,8 +86,8 @@ export default function Practice3() {
           <div
             style={{ width: "100%", display: "flex", justifyContent: "center", padding: "40px 0" }}
           >
-            <button>Past</button>
-            <button>Next</button>
+            <button onClick={handlePastPage}>Past</button>
+            <button onClick={handleNextPage}>Next</button>
           </div>
         </article>
       )}
