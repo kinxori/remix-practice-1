@@ -48,9 +48,6 @@ export default function Practice3() {
     }
   };
 
-  console.log("aaa", min);
-  console.log("fasdf", max);
-
   return (
     <>
       {useLocation().pathname !== "/practica-3" ? (

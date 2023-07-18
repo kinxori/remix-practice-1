@@ -24,12 +24,25 @@ export default function Details() {
 
   return (
     <article style={{ fontFamily: "Helvetica" }}>
-      <h2>This is the detail of practica 3</h2>
-      <h3> Product: {product.title} </h3>
-      <h3>Price: ${product.price}</h3>
-      {product.image.map((image: any) => (
-        <img key={image} src={image} style={{ width: 300 }}></img>
-      ))}
+      <h2 style={{ textAlign: "center", padding: "40px 0" }}>
+        This is the detail view of {product.title}
+      </h2>
+      <h3 style={{ fontSize: "32px" }}>{product.title} </h3>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          width: "80%",
+          justifyContent: "center",
+          gap: "10px",
+          margin: "0 auto",
+        }}
+      >
+        {product.image.map((image: any) => (
+          <img key={image} src={image} style={{ width: 200 }}></img>
+        ))}
+      </div>
+      <h3 style={{ fontSize: "32px", textAlign: "right" }}>Price: ${product.price}</h3>
       <p>{product.body} </p>
     </article>
   );
