@@ -9,7 +9,7 @@ import { db } from "~/database/db.server";
 // };
 
 export const loader = async ({ params }: LoaderArgs) => {
-  const product = await db.idk.findUnique({
+  const product = await db.product.findUnique({
     where: {
       slug: params.slug,
     },

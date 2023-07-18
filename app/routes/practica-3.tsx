@@ -29,8 +29,19 @@ export default function Practice3() {
         <Outlet />
       ) : (
         <article>
-          <h1> Practica vista de lista y vista de detalle</h1>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", justifyContent: "center" }}>
+          <h1 style={{ textAlign: "center", fontFamily: "Helvetica", fontSize: "34px" }}>
+            {" "}
+            Practica vista de lista y vista de detalle
+          </h1>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "10px",
+              justifyContent: "center",
+              padding: "20px",
+            }}
+          >
             {data.map((product: any) => (
               <Link to={`${product.slug}/details`} key={product.id} style={{ width: "200px" }}>
                 <img
@@ -40,13 +51,14 @@ export default function Practice3() {
                 ></img>
                 <h3>{product.title}</h3>
                 <h3>{product.price}</h3>
-                <i>{product.slug}</i>
               </Link>
             ))}
           </div>
-          <div>
-            <button>Nexto Page</button>
-            <button>Past Page</button>
+          <div
+            style={{ width: "100%", display: "flex", justifyContent: "center", padding: "40px 0" }}
+          >
+            <button>Past</button>
+            <button>Next</button>
           </div>
         </article>
       )}
