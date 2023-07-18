@@ -25,22 +25,26 @@ export const loader = async () => {
 
 export default function Practice3() {
   const { data }: any = useLoaderData();
-  const [min, setMin] = useState(0);
-  const [max, setMax] = useState(15);
+  const [min, setMin] = useState(15);
+  const [max, setMax] = useState(30);
 
   const handlePastPage = () => {
     if (min >= 15) {
       setMin(min - 15);
+      setMax(max - 15);
     } else {
       setMin(min);
+      setMax(max);
     }
   };
 
   const handleNextPage = () => {
     if (max >= 15) {
       setMax(max + 15);
+      setMin(min + 15);
     } else if (max >= 500) {
       setMax(max);
+      setMin(min);
     }
   };
 
@@ -54,7 +58,6 @@ export default function Practice3() {
       ) : (
         <article>
           <h1 style={{ textAlign: "center", fontFamily: "Helvetica", fontSize: "34px" }}>
-            {" "}
             Practica vista de lista y vista de detalle
           </h1>
           <div
