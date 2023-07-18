@@ -4,6 +4,7 @@
 // 3.- When database seeded with faker, then we consume it with loader
 
 import { Link, useLoaderData, Outlet, useLocation } from "@remix-run/react";
+import { useState } from "react";
 import { db } from "~/database/db.server";
 
 export const loader = async () => {
@@ -22,6 +23,7 @@ export const loader = async () => {
 
 export default function Practice3() {
   const { data }: any = useLoaderData();
+  const [range, setRange] = useState([]);
 
   return (
     <>
@@ -40,17 +42,22 @@ export default function Practice3() {
               gap: "10px",
               justifyContent: "center",
               padding: "20px",
+              fontFamily: "Helvetica",
             }}
           >
             {data.map((product: any) => (
-              <Link to={`${product.slug}/details`} key={product.id} style={{ width: "200px" }}>
+              <Link
+                to={`${product.slug}/details`}
+                key={product.id}
+                style={{ width: "200px", textDecoration: "none", color: "inherit" }}
+              >
                 <img
                   style={{ width: "100%", objectFit: "contain" }}
                   src={product.image[0]}
                   alt="idk"
                 ></img>
                 <h3>{product.title}</h3>
-                <h3>{product.price}</h3>
+                <h3>${product.price}</h3>
               </Link>
             ))}
           </div>

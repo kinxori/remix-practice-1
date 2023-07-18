@@ -17,20 +17,22 @@ export const loader = async ({ params }: LoaderArgs) => {
   return { product };
 };
 
-export const meta = ({ params }: any) => [{ title: params.title }];
-
 export default function Details() {
   //   const { slug } = useLoaderData();          // Complementary with the loader
   // const params = useParams(); // This is the proper way
   const { product } = useLoaderData();
 
   return (
-    <article>
-      <div>This is the detail of practica 3</div>
-      <h2> Product: {product.title} </h2>
-      <h2>Price: {product.price}</h2>
-      <img src={product.image[0]}></img>
+    <article style={{ fontFamily: "Helvetica" }}>
+      <h2>This is the detail of practica 3</h2>
+      <h3> Product: {product.title} </h3>
+      <h3>Price: ${product.price}</h3>
+      {product.image.map((image: any) => (
+        <img key={image} src={image} style={{ width: 300 }}></img>
+      ))}
       <p>{product.body} </p>
     </article>
   );
 }
+
+export const meta = ({ params }: any) => [{ title: params.slug }];
