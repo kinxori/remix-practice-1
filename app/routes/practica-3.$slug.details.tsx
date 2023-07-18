@@ -27,7 +27,7 @@ export default function Details() {
       <h2 style={{ textAlign: "center", padding: "40px 0" }}>
         This is the detail view of {product.title}
       </h2>
-      <h3 style={{ fontSize: "32px" }}>{product.title} </h3>
+      <h3 style={{ fontSize: "36px", textAlign: "center" }}>{product.title} </h3>
       <div
         style={{
           display: "flex",
@@ -42,8 +42,10 @@ export default function Details() {
           <img key={image} src={image} style={{ width: 200 }}></img>
         ))}
       </div>
-      <h3 style={{ fontSize: "32px", textAlign: "right" }}>Price: ${product.price}</h3>
-      <p>{product.body} </p>
+      <h3 style={{ fontSize: "32px", textAlign: "right", paddingRight: "40px" }}>
+        Price: ${product.price}
+      </h3>
+      <p style={{ width: "60%", textAlign: "justify", paddingLeft: "80px" }}>{product.body} </p>
     </article>
   );
 }
