@@ -7,7 +7,7 @@ import { Link, useLoaderData, Outlet, useLocation } from "@remix-run/react";
 import { db } from "~/database/db.server";
 
 export const loader = async () => {
-  const data = await db.idk.findMany({
+  const data = await db.product.findMany({
     select: {
       title: true,
       image: true,
@@ -15,7 +15,7 @@ export const loader = async () => {
       id: true,
       price: true,
     },
-    take: 16,
+    take: 15,
   });
   return { data };
 };
@@ -30,7 +30,7 @@ export default function Practice3() {
       ) : (
         <article>
           <h1> Practica vista de lista y vista de detalle</h1>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", justifyContent: "center" }}>
             {data.map((product: any) => (
               <Link to={`${product.slug}/details`} key={product.id} style={{ width: "200px" }}>
                 <img
@@ -43,6 +43,10 @@ export default function Practice3() {
                 <i>{product.slug}</i>
               </Link>
             ))}
+          </div>
+          <div>
+            <button>Nexto Page</button>
+            <button>Past Page</button>
           </div>
         </article>
       )}
