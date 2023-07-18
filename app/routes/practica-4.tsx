@@ -23,3 +23,7 @@ function Display({ onClick, count }: any) {
     </>
   );
 }
+
+export const meta = () => {
+  return [{ title: "Practica 4" }];
+};
