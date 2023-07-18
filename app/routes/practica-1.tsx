@@ -1,5 +1,6 @@
 import { useActionData, useLoaderData } from "@remix-run/react";
 import styles from "~/styles/styles.css";
+import favIcon from "~/assets/new-logo-kinxori.ico";
 
 // Loader to consume API
 
@@ -29,7 +30,13 @@ export const meta = () => {
 // Links for route page
 
 export const links = () => {
-  return [{ rel: "stylesheet", href: styles }];
+  return [
+    { rel: "stylesheet", href: styles },
+    {
+      rel: "icon",
+      href: favIcon,
+    },
+  ];
 };
 
 // Cliente component

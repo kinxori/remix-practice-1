@@ -6,16 +6,17 @@
 import { Link, useLoaderData, Outlet, useLocation } from "@remix-run/react";
 import { useState } from "react";
 import { db } from "~/database/db.server";
+import favIcon from "~/assets/new-logo-kinxori.ico";
 
 export const loader = async () => {
   const data = await db.product.findMany({
-    select: {
-      title: true,
-      image: true,
-      slug: true,
-      id: true,
-      price: true,
-    },
+    // select: {          //This is having some errors with "price", it saying it doesnt exist even tho it loades the value
+    //   title: true,
+    //   image: true,
+    //   slug: true,
+    //   id: true,
+    //   price: true,
+    // },
     take: 15,
   });
   return { data };
@@ -23,7 +24,8 @@ export const loader = async () => {
 
 export default function Practice3() {
   const { data }: any = useLoaderData();
-  const [range, setRange] = useState([]);
+  const [min, setMin] = useState(0);
+  const [max, setMax] = useState(15);
 
   return (
     <>
@@ -45,7 +47,7 @@ export default function Practice3() {
               fontFamily: "Helvetica",
             }}
           >
-            {data.map((product: any) => (
+            {data.slice(min, max).map((product: any) => (
               <Link
                 to={`${product.slug}/details`}
                 key={product.id}
@@ -74,3 +76,7 @@ export default function Practice3() {
 }
 
 export const meta = () => [{ title: "Practica 3" }];
+
+export const links = () => {
+  return [{ rel: "icon", href: favIcon }];
+};

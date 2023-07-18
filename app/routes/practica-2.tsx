@@ -2,6 +2,7 @@
 import { Product } from "@prisma/client";
 import { useLoaderData } from "@remix-run/react";
 import { db } from "~/database/db.server";
+import favIcon from "~/assets/new-logo-kinxori.ico";
 //This sends data to database remix1
 //  This is a writer query
 
@@ -52,4 +53,8 @@ export const meta = () => {
       title: "Practica 2",
     },
   ];
+};
+
+export const links = () => {
+  return [{ rel: "icon", href: favIcon }];
 };
