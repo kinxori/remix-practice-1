@@ -9,7 +9,17 @@ export default function Practice4() {
 
   return (
     <article>
-      <div>Hola mundo</div>
+      <Display onClick={() => handleClick()} count={state} />
     </article>
+  );
+}
+
+function Display({ onClick, count }: any) {
+  return (
+    <>
+      <h2>Click the button</h2>
+      <span>Count: {count} </span>
+      <button onClick={onClick}>Add </button>
+    </>
   );
 }
