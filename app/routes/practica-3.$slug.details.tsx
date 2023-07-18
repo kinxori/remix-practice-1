@@ -23,16 +23,16 @@ export default function Details() {
   const { product } = useLoaderData();
 
   return (
-    <article style={{ fontFamily: "Helvetica" }}>
+    <article style={{ fontFamily: "Helvetica", width: "80%", margin: "0 auto" }}>
       <h2 style={{ textAlign: "center", padding: "40px 0" }}>
         This is the detail view of {product.title}
       </h2>
+      <Link to="/practica-3">Go Back</Link>
       <h3 style={{ fontSize: "36px", textAlign: "center" }}>{product.title} </h3>
       <div
         style={{
           display: "flex",
           flexWrap: "wrap",
-          width: "80%",
           justifyContent: "center",
           gap: "10px",
           margin: "0 auto",
@@ -42,11 +42,8 @@ export default function Details() {
           <img key={image} src={image} style={{ width: 200 }}></img>
         ))}
       </div>
-      <h3 style={{ fontSize: "32px", textAlign: "right", paddingRight: "40px" }}>
-        Price: ${product.price}
-      </h3>
-      <p style={{ width: "60%", textAlign: "justify", paddingLeft: "80px" }}>{product.body} </p>
-      <Link to="/practica-3">Go Back</Link>
+      <h3 style={{ fontSize: "32px", textAlign: "right" }}>Price: ${product.price}</h3>
+      <p style={{ textAlign: "justify" }}>{product.body} </p>
     </article>
   );
 }
