@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import { LoaderArgs, V2_MetaArgs, V2_MetaFunction } from "@remix-run/node";
-import { useLoaderData, useParams } from "@remix-run/react";
+import { Link, useLoaderData, useParams } from "@remix-run/react";
 import { db } from "~/database/db.server";
 
 // export const loader = async ({ params }: any) => {   // This is 1 way
@@ -46,6 +46,7 @@ export default function Details() {
         Price: ${product.price}
       </h3>
       <p style={{ width: "60%", textAlign: "justify", paddingLeft: "80px" }}>{product.body} </p>
+      <Link to="/practica-3">Go Back</Link>
     </article>
   );
 }
