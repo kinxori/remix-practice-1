@@ -53,17 +53,23 @@ export default function Practice3() {
       {useLocation().pathname !== "/practica-3" ? (
         <Outlet />
       ) : (
-        <article>
-          <h1 style={{ textAlign: "center", fontFamily: "Helvetica", fontSize: "34px" }}>
+        <article style={{ width: "80%", margin: "0 auto" }}>
+          <h1
+            style={{
+              textAlign: "center",
+              fontFamily: "Helvetica",
+              fontSize: "34px",
+              padding: "40px 0",
+            }}
+          >
             Practica vista de lista y vista de detalle
           </h1>
           <div
             style={{
               display: "flex",
               flexWrap: "wrap",
-              gap: "10px",
-              justifyContent: "center",
-              padding: "20px",
+              justifyContent: "space-around",
+
               fontFamily: "Helvetica",
             }}
           >
@@ -71,7 +77,7 @@ export default function Practice3() {
               <Link
                 to={`${product.slug}/details`}
                 key={product.id}
-                style={{ width: "200px", textDecoration: "none", color: "inherit" }}
+                style={{ width: "180px", textDecoration: "none", color: "inherit" }}
               >
                 <img
                   style={{ width: "100%", objectFit: "contain" }}
@@ -86,8 +92,31 @@ export default function Practice3() {
           <div
             style={{ width: "100%", display: "flex", justifyContent: "center", padding: "40px 0" }}
           >
-            <button onClick={handlePastPage}>Past</button>
-            <button onClick={handleNextPage}>Next</button>
+            <button
+              style={{
+                border: "none",
+                padding: "15px 25px",
+                borderRadius: "25px 0px 0px 25px",
+                fontSize: "20px",
+                margin: 0,
+              }}
+              onClick={handlePastPage}
+            >
+              Past
+            </button>
+            <hr style={{ margin: 0 }}></hr>
+            <button
+              style={{
+                border: "none",
+                padding: "15px 25px",
+                borderRadius: "0px 25px 25px 0px",
+                fontSize: "20px",
+                margin: 0,
+              }}
+              onClick={handleNextPage}
+            >
+              Next
+            </button>
           </div>
         </article>
       )}
