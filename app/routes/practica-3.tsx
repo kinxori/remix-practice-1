@@ -27,7 +27,7 @@ export default function Practice3() {
 
   return (
     <>
-      {useLocation().pathname !== "/practica-3/" ? (
+      {useLocation().pathname !== "/practica-3" ? (
         <Outlet />
       ) : (
         <article>
