@@ -10,27 +10,23 @@ export default function Index() {
       <p className="text-[20px] font-sans leading-5 ">
         In this page you can see my roadmap to become a full-stack developer
       </p>
-      <div>
+      <div className="my-10 flex flex-col gap-4    ">
         <StaticCard title="Practice 1" to="/practica-1">
+          Reviewing the basic stuff a Remix route must have. Talking from "loader, action, meta,
+          links" functions to the component itself.
+        </StaticCard>
+        <StaticCard title="Practice 2" to="/practica-2">
           idk
         </StaticCard>
-        <ul>
-          <li>
-            <Link to="/practica-2" rel="noreferrer">
-              Practice 2
-            </Link>
-          </li>
-          <li>
-            <Link to="/practica-3" rel="noreferrer">
-              Practice 3
-            </Link>
-          </li>
-          <li>
-            <Link to="/practica-4" rel="noreferrer">
-              Practice 4
-            </Link>
-          </li>
-        </ul>
+        <StaticCard title="Practice 3" to="/practica-3">
+          idk
+        </StaticCard>
+        <StaticCard title="Practice 4" to="/practica-4">
+          idk
+        </StaticCard>
+        <StaticCard title="Practice 5" to="/practica-5">
+          idk
+        </StaticCard>
       </div>
     </article>
   );
