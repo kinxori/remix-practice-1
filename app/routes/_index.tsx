@@ -1,7 +1,6 @@
 import type { V2_MetaFunction } from "@remix-run/node";
 import { Link } from "@remix-run/react";
 import favIcon from "~/assets/new-logo-kinxori.ico";
-import styles from "~/styles/styles.css";
 
 export const meta: V2_MetaFunction = () => {
   return [{ title: "Home" }, { name: "description", content: "Welcome to Remix!" }];
@@ -13,14 +12,15 @@ export const links = () => {
       rel: "icon",
       href: favIcon,
     },
-    { rel: "stylesheet", href: styles },
   ];
 };
 
 export default function Index() {
   return (
-    <div className=" font-light underline text-red-500">
-      <h1>Welcome, this is my practice road to learn Remix, MongoDB and Prisma</h1>
+    <div>
+      <h1 className="text-[20px] font-light underline  text-red-500">
+        Welcome, this is my practice road to learn Remix, MongoDB and Prisma
+      </h1>
       <ul>
         <li>
           <Link to="/practica-1" rel="noreferrer">
