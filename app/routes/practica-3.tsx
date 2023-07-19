@@ -53,34 +53,32 @@ export default function Practice3() {
       {useLocation().pathname !== "/practica-3" ? (
         <Outlet />
       ) : (
-        <article style={{ width: "80%", margin: "0 auto" }}>
-          <h1
+        <article style={{ fontFamily: "Helvetica", width: "80%", margin: "0 auto" }}>
+          <h2
             style={{
               textAlign: "center",
-              fontFamily: "Helvetica",
-              fontSize: "34px",
               padding: "40px 0",
             }}
           >
             Practica vista de lista y vista de detalle
-          </h1>
+          </h2>
+          <Link to="/">Go Back</Link>
           <div
             style={{
               display: "flex",
               flexWrap: "wrap",
               justifyContent: "space-around",
-
-              fontFamily: "Helvetica",
+              paddingTop: "30px",
             }}
           >
             {data.slice(min, max).map((product: any) => (
               <Link
                 to={`${product.slug}/details`}
                 key={product.id}
-                style={{ width: "180px", textDecoration: "none", color: "inherit" }}
+                style={{ width: "200px", textDecoration: "none", color: "inherit" }}
               >
                 <img
-                  style={{ width: "100%", objectFit: "contain" }}
+                  style={{ width: "100%", objectFit: "contain", borderRadius: "10px" }}
                   src={product.image[0]}
                   alt="idk"
                 ></img>
