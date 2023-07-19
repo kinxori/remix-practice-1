@@ -7,8 +7,9 @@ export default function Index() {
   return (
     <article className="w-[80%] mx-auto my-10 font-[rubik]    ">
       <h1 className="font-bold text-[34px]">Welcome!</h1>
-      <p className="text-[20px] font-sans leading-5 ">
-        In this page you can see my roadmap to become a full-stack developer
+      <p className="text-[20px] font-sans leading-6 ">
+        In this page you can see the practices and the learn path I took to become a full-stack
+        developer
       </p>
       <div className="my-10 flex flex-col gap-4    ">
         <StaticCard title="Practice 1" to="/practica-1">
