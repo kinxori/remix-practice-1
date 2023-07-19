@@ -43,8 +43,24 @@ export default function LandingPage() {
   const dataLoader = useLoaderData();
   const formDataAction = useActionData();
   return (
-    <article>
-      <h1>Hola mundo</h1>
+    <article className="w-[80%] mx-auto my-10 ">
+      <div>
+        <h1 className="font-bold text-[54px] font-[rubik] ">Hey there!</h1>
+        <h3 className="font-bold text-[16px] font-[rubik]   ">Practice 1</h3>
+        <br></br>
+        <br></br>
+        <p>In this page we can take a look to the basic structure of a Remix route.</p>
+        <br></br>
+        <p>There a 5 main functions to have a good Remix route.</p>
+        <br></br>
+      </div>
+      <div>
+        <h3 className="font-bold text-[16px] font-[rubik]   ">The main component:</h3>
+        <p>
+          Here we have the main component which is the function exported as default where display
+          our JSX.
+        </p>
+      </div>
       <form method="post">
         <label>
           Email
