@@ -10,8 +10,8 @@ export default function Index() {
         <h1 className="font-bold text-[54px]">Welcome!</h1>
         <br></br>
         <br></br>
-        <p className=" ">
-          In this page you can see the practices and the learn path I took to become a full-stack
+        <p className=" text-justify ">
+          In this page you can see the practices and the learn path I took to study full-stack
           developer.
         </p>
         <br></br>
@@ -33,16 +33,18 @@ export default function Index() {
           links" functions to the component itself.
         </StaticCard>
         <StaticCard title="Practice 2" to="/practica-2">
-          idk
+          Creating a MongoDB project, creating a Prisma scheme and connecting both to Remix to
+          retrieve and fetch the database.
         </StaticCard>
         <StaticCard title="Practice 3" to="/practica-3">
-          idk
+          Implementing Faker.js to seed my MongoDB with random products. Creating the List View and
+          a dynamic route for the Detail View of each product loaded.
         </StaticCard>
         <StaticCard title="Practice 4" to="/practica-4">
-          idk
+          Practicing React hooks such as "useState, useEffect, useRef & useMemo".
         </StaticCard>
         <StaticCard title="Practice 5" to="/practica-5">
-          idk
+          Still working...
         </StaticCard>
       </div>
     </article>
