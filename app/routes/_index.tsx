@@ -9,7 +9,7 @@ export default function Index() {
       <h1 className="font-bold text-[34px]">Welcome!</h1>
       <p className="text-[20px] font-sans leading-6 ">
         In this page you can see the practices and the learn path I took to become a full-stack
-        developer
+        developer using Remix, React, MongoDB and Prisma.
       </p>
       <div className="my-10 flex flex-col gap-4    ">
         <StaticCard title="Practice 1" to="/practica-1">
