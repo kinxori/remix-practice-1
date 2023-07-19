@@ -2,25 +2,14 @@ import type { V2_MetaFunction } from "@remix-run/node";
 import { Link } from "@remix-run/react";
 import favIcon from "~/assets/new-logo-kinxori.ico";
 
-export const meta: V2_MetaFunction = () => {
-  return [{ title: "Home" }, { name: "description", content: "Welcome to Remix!" }];
-};
-
-export const links = () => {
-  return [
-    {
-      rel: "icon",
-      href: favIcon,
-    },
-  ];
-};
-
 export default function Index() {
   return (
-    <div>
-      <h1 className="text-[20px] font-light underline  text-red-500">
-        Welcome, this is my practice road to learn Remix, MongoDB and Prisma
-      </h1>
+    <article className="w-[80%] mx-auto my-10 font-[rubik]    ">
+      <h1 className="font-bold text-[34px]">Welcome!</h1>
+      <p className="text-[20px] font-sans leading-5 ">
+        In this page you can see my roadmap to become a full-stack developer
+      </p>
+      <h3 className="">Surf Practices</h3>
       <ul>
         <li>
           <Link to="/practica-1" rel="noreferrer">
@@ -43,6 +32,19 @@ export default function Index() {
           </Link>
         </li>
       </ul>
-    </div>
+    </article>
   );
 }
+
+export const links = () => {
+  return [
+    {
+      rel: "icon",
+      href: favIcon,
+    },
+  ];
+};
+
+export const meta: V2_MetaFunction = () => {
+  return [{ title: "Home" }, { name: "description", content: "Welcome to Remix!" }];
+};
