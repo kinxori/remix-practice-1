@@ -28,24 +28,24 @@ export default function Index() {
         </ul>
       </div>
       <div className="my-10 flex flex-col gap-4    ">
-        <StaticCard title="Practice 1" to="/practica-1">
+        <StaticCard title="Practice 1" to="/practice-1">
           Reviewing the basic stuff a Remix route must have. Talking from "loader, action, meta,
           links" functions to the component itself.
         </StaticCard>
-        <StaticCard title="Practice 2" to="/practica-2">
+        <StaticCard title="Practice 2" to="/practice-2">
           Creating a MongoDB project, creating a Prisma scheme and connecting both to Remix to
           retrieve and fetch the database.
         </StaticCard>
-        <StaticCard title="Practice 3" to="/practica-3">
+        <StaticCard title="Practice 3" to="/practice-3">
           Implementing Faker.js to seed my MongoDB with random products. Creating the List View and
           a dynamic route for the Detail View of each product loaded.
         </StaticCard>
-        <StaticCard title="Practice 4" to="/practica-4">
+        <StaticCard title="Practice 4" to="/practice-4">
           Practicing React hooks such as "useState, useEffect, useRef & useMemo".
         </StaticCard>
-        <StaticCard title="Practice 5" to="/practica-5">
+        {/* <StaticCard title="Practice 5" to="/practica-5">
           Still working...
-        </StaticCard>
+        </StaticCard> */}
       </div>
     </article>
   );
