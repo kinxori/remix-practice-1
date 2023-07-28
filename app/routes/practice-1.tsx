@@ -2,8 +2,19 @@ import { Link, useActionData, useLoaderData } from "@remix-run/react";
 import favIcon from "~/assets/new-logo-kinxori.ico";
 import SyntaxHighlighter from "react-syntax-highlighter";
 
-const snippet1 = ` 
-  Hello there!
+const snippetLinkFunction = ` 
+  // You have to import your file first
+
+  import favIcon from "~/assets/new-logo-kinxori.ico";
+
+  export const links = () => {
+    return [
+      {
+        rel: "icon",
+        href: favIcon,
+      },
+    ];
+  };
 `;
 
 // Loader to consume API
@@ -69,21 +80,26 @@ export default function LandingPage() {
             <li>Component Function</li>
           </ul>
         </div>
-        <div>
+        <div className="flex flex-col gap-3">
           <h3 className="font-bold text-[20px] font-[rubik] ">Link Function</h3>
-        </div>
-        <div className="rounded-[10px] my-5 overflow-hidden drop-shadow-[12px_12px_0px_rgba(0,0,0,1)] border-white border-[2px]   ">
-          <div className="w-[100%] h-[30px] bg-white flex items-center pl-[10px]   ">
-            <i className="text-black  ">Link function</i>
+          <p>
+            This is something like our traditional HTML Link tag, but in Remix we use is as a
+            function. The purpose of this is to have a dynamic Array of Links for each route.
+          </p>
+          <p>This is how your Link function should look like:</p>
+          <div className="rounded-[10px] my-5 overflow-hidden drop-shadow-[12px_12px_0px_rgba(0,0,0,1)] border-white border-[2px]   ">
+            <div className="w-[100%] h-[30px] bg-white flex items-center pl-[10px]   ">
+              <i className="text-black  ">Link function</i>
+            </div>
+            <hr className="border-black border-[2px]"></hr>
+            <SyntaxHighlighter
+              language="text"
+              customStyle={{ background: "black", color: "white" }}
+              showLineNumbers
+            >
+              {snippetLinkFunction}
+            </SyntaxHighlighter>
           </div>
-          <hr className="border-black border-[2px]"></hr>
-          <SyntaxHighlighter
-            language="text"
-            customStyle={{ background: "black", color: "white" }}
-            showLineNumbers
-          >
-            {snippet1}
-          </SyntaxHighlighter>
         </div>
         <form method="post">
           <label>
