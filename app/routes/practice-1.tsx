@@ -182,6 +182,9 @@ export default function LandingPage() {
             </SyntaxHighlighter>
           </div>
         </div>
+        <div className="flex flex-col gap-3">
+          <h3 className="font-bold text-[20px] font-[rubik] ">Action Function</h3>
+        </div>
         <form method="post">
           <label>
             Email
