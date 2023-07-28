@@ -27,6 +27,27 @@ const snippetMetaFunction = `
   };
 `;
 
+const snippetLoaderFunction = `
+  // If you only have this in your route, you will have an API! 
+
+  export const loader = async () => {
+    const data = await (await fetch("https://rickandmortyapi.com/api/character/")).json();
+    return data;
+  };
+
+  // If you add the component, you will have a normal route displaying your component. 
+
+  export const loader = async () => {
+    const data = await (await fetch("https://rickandmortyapi.com/api/character/")).json();
+    return data;
+  };
+
+  export default function MyComponent(){
+    return <h1> Hello World! </div>
+  }
+
+`;
+
 // Loader to consume API
 
 export const loader = async () => {
@@ -77,7 +98,7 @@ export default function LandingPage() {
           <button className="px-4 py-1 bg-gray-200 text-black rounded-[10px] my-3">Go Back</button>
         </Link>
       </div>
-      <div className="flex flex-col gap-3 my-10">
+      <div className="flex flex-col gap-3 my-10 mb-20">
         <div className="flex flex-col gap-3">
           <p>In this page we can take a look to the basic structure of a Remix route.</p>
           <p>There are 5 main parts to have a complete Remix route.</p>
@@ -129,6 +150,35 @@ export default function LandingPage() {
               showLineNumbers
             >
               {snippetMetaFunction}
+            </SyntaxHighlighter>
+          </div>
+        </div>
+        <div className="flex flex-col gap-3">
+          <h3 className="font-bold text-[20px] font-[rubik] ">Loader Function</h3>
+          <p>This function could be the most important one!</p>
+          <p>
+            Why? Because your will probably be fetching APIs or databases all-day-long and this is
+            your tool to do it.
+          </p>
+          <p>With "loader" you can feed your route with the data you need to work with.</p>
+          <p>But there's 2 ways to use it.</p>
+          <p>
+            Either way your set your "loader" up and skip your component and you will have an API
+            with the data your are consuming.
+          </p>
+          <p>This way you can have 2 uses for your routes in your project.</p>
+          <p>Example:</p>
+          <div className="rounded-[10px] my-5 overflow-hidden drop-shadow-[12px_12px_0px_rgba(0,0,0,1)] border-white border-[2px]   ">
+            <div className="w-[100%] h-[30px] bg-white flex items-center pl-[10px]   ">
+              <i className="text-black  ">Meta function</i>
+            </div>
+            <hr className="border-black border-[2px]"></hr>
+            <SyntaxHighlighter
+              language="text"
+              customStyle={{ background: "black", color: "white" }}
+              showLineNumbers
+            >
+              {snippetLoaderFunction}
             </SyntaxHighlighter>
           </div>
         </div>
