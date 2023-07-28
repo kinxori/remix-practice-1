@@ -4,19 +4,15 @@ import StaticCard from "~/components/static-card";
 
 export default function Index() {
   return (
-    <article className="w-[80%] mx-auto my-10 font-[rubik]  ">
-      <div className="text-[20px] font-sans leading-6 ">
-        <h1 className="font-bold text-[54px]">Welcome!</h1>
-        <br></br>
-        <br></br>
-        <p className=" text-justify ">
+    <article className="w-[80%] mx-auto text-white">
+      <div className="text-[16px] text-justify font-[inter] leading-[20px] flex flex-col gap-5 mt-[40%] ">
+        <h1 className="font-bold text-[54px] leading-none font-[rubik] mb-5 ">Welcome!</h1>
+        <p>
           In this page you can see the practices and the learn path I took to study full-stack
           developer.
         </p>
-        <br></br>
-        <p className=" "> Technologies used: </p>
-        <br></br>
-        <ul className="list-disc pl-8 ">
+        <p> Technologies used: </p>
+        <ul className="list-disc pl-8  ">
           <li>Remix</li>
           <li>MongoDB</li>
           <li>Prisma</li>
@@ -26,7 +22,7 @@ export default function Index() {
           <li>Tailwind</li>
         </ul>
       </div>
-      <div className="my-10 flex flex-col gap-4    ">
+      <div className="mt-10 mb-[30%]  flex flex-col gap-4    ">
         <StaticCard title="Practice 1" to="/practice-1">
           Reviewing the basic stuff a Remix route must have. Talking from "loader, action, meta,
           links" functions to the component itself.

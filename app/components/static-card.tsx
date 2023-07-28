@@ -7,7 +7,7 @@ export default function StaticCard(props: any) {
         <div className="h-[20%] bg-gray-900 text-white text-center text-[20px] flex items-center justify-center  ">
           {props.title}
         </div>
-        <div className="h-[80%] bg-gray-100 text-justify p-4 box-border font-sans leading-5    ">
+        <div className="h-[80%] bg-gray-100 text-justify text-black p-4 box-border font-sans leading-5    ">
           {props.children}
         </div>
       </Link>
