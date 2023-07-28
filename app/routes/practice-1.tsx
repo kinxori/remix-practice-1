@@ -43,6 +43,8 @@ const snippetLoaderFunction = `
   };
 
   export default function MyComponent(){
+    // Make sure to add the useLoaderData hook to call your loader
+    const dataLoader = useLoaderData();
     return <h1> Hello World! </div>
   }
 
@@ -184,6 +186,11 @@ export default function LandingPage() {
         </div>
         <div className="flex flex-col gap-3">
           <h3 className="font-bold text-[20px] font-[rubik] ">Action Function</h3>
+          <p>
+            This function is quite the opposite of loader. This function will SEND data to your
+            database.
+          </p>
+          <p>But this is quite a little bit tricky because you need 1 Form to do it.</p>
         </div>
         <form method="post">
           <label>
