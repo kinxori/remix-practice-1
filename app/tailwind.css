@@ -6,3 +6,9 @@
   margin: 0;
   padding: 0;
 }
+
+.root {
+  height: 100vh;
+  background: hsla(289, 83%, 36%, 1);
+  background: radial-gradient(circle, hsla(289, 83%, 26%, 1) 0%, hsla(0, 0%, 0%, 1) 150%);
+}

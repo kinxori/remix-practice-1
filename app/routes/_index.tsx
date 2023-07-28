@@ -4,7 +4,7 @@ import StaticCard from "~/components/static-card";
 
 export default function Index() {
   return (
-    <article className="w-[80%] mx-auto my-10 font-[rubik]    ">
+    <article className="w-[80%] mx-auto my-10 font-[rubik]  ">
       <div className="text-[20px] font-sans leading-6 ">
         <h1 className="font-bold text-[54px]">Welcome!</h1>
         <br></br>
