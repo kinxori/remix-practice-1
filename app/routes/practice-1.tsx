@@ -75,7 +75,7 @@ const snippetActionFunction = `
   // Make sure to add the useActionData hook to call your action into your component
 
   export default function MyComponent(){
-    const dataLoader = useLoaderData();
+    const formDataAction = useActionData();
     return <h1> Hello World! </div>
   }
 `;
@@ -131,6 +131,7 @@ export const links = () => {
 export default function LandingPage() {
   const dataLoader = useLoaderData();
   const formDataAction = useActionData();
+
   return (
     <article className="w-[80%] mx-auto my-10 text-white ">
       <div className="flex flex-col ">
@@ -205,8 +206,8 @@ export default function LandingPage() {
           <p>With "loader" you can feed your route with the data you need to work with.</p>
           <p>But there's 2 ways to use it.</p>
           <p>
-            Either way your set your "loader" up and skip your component and you will have an API
-            with the data your are consuming.
+            Either way your set your "loader" up and skip your client component and you will have an
+            API with the data your are consuming.
           </p>
           <p>This way you can have 2 uses for your routes in your project.</p>
           <p>Example:</p>
@@ -232,6 +233,34 @@ export default function LandingPage() {
           </p>
           <p>But this is quite a little bit tricky because you need 1 Form to do it.</p>
           <p>Your Form could like like this:</p>
+          <div className="rounded-[10px] border-[2px] border-white my-5 bg-black overflow-hidden drop-shadow-[12px_12px_0px_rgba(0,0,0,1)] box-border p-[15px] flex flex-col gap-2 ">
+            <form method="post" className="flex flex-col gap-3  ">
+              <label className="flex flex-col gap-1  ">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="email"
+                  className="rounded-lg py-2 px-2  "
+                ></input>
+              </label>
+              <label className="flex flex-col gap-1  ">
+                <input
+                  type="text"
+                  name="password"
+                  placeholder="password"
+                  className="rounded-lg py-2 px-2  "
+                ></input>
+              </label>
+              <button
+                type="submit"
+                onClick={(event) => event.preventDefault()}
+                className="bg-white rounded-lg text-black py-2 px-5 "
+              >
+                Enviar
+              </button>
+            </form>
+          </div>
+          <p>Or in JSX, like this:</p>
           <div className="rounded-[10px] my-5 overflow-hidden drop-shadow-[12px_12px_0px_rgba(0,0,0,1)] border-white border-[2px]   ">
             <div className="w-[100%] h-[30px] bg-white flex items-center pl-[10px]   ">
               <i className="text-black  ">Form JSX</i>
@@ -265,17 +294,17 @@ export default function LandingPage() {
           </div>
         </div>
         <div className="flex flex-col gap-3">
-          <h3 className="font-bold text-[20px] font-[rubik] ">Component Function</h3>
+          <h3 className="font-bold text-[20px] font-[rubik] ">Client Component</h3>
           <p>
-            The 5th part of a Remix route is the actual component function. Now, remember, this is
-            optional. If you want to have your route as a traditional component, add it. If you want
-            your route to be an API, just skip this function.
+            The 5th part of a Remix route is the actual client component. Now, remember, this is
+            optional. If you want to have your route as a traditional client component, add it. If
+            you want your route to be an API, just skip this function.
           </p>
           <p>Your component is going to be exported as default and return JSX.</p>
           <p>Check it out:</p>
           <div className="rounded-[10px] my-5 overflow-hidden drop-shadow-[12px_12px_0px_rgba(0,0,0,1)] border-white border-[2px]   ">
             <div className="w-[100%] h-[30px] bg-white flex items-center pl-[10px]   ">
-              <i className="text-black  ">Component function</i>
+              <i className="text-black  ">Client Component</i>
             </div>
             <hr className="border-black border-[2px]"></hr>
             <SyntaxHighlighter
@@ -287,17 +316,15 @@ export default function LandingPage() {
             </SyntaxHighlighter>
           </div>
         </div>
-        <form method="post">
-          <label>
-            Email
-            <input type="email" name="email" placeholder="email"></input>
-          </label>
-          <label>
-            Password
-            <input type="text" name="password" placeholder="password"></input>
-          </label>
-          <button type="submit">Enviar</button>
-        </form>
+        <div className="flex flex-col gap-3">
+          <h3 className="font-bold text-[20px] font-[rubik] ">That's it! (for now)</h3>
+          <p>If you want to go to the next practice, click next: </p>
+          <Link to="/practice-2" className="ml-auto">
+            <button className="px-4 py-1 bg-gray-200 text-black rounded-[10px] my-3">
+              Next &#8594;
+            </button>
+          </Link>
+        </div>
       </div>
     </article>
   );
