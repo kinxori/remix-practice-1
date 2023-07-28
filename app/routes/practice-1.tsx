@@ -50,33 +50,53 @@ export default function LandingPage() {
   return (
     <article className="w-[80%] mx-auto my-10 text-white ">
       <div className="flex flex-col ">
-        <h1 className="font-bold text-[54px] font-[rubik] ">Hey there!</h1>
-        <h3 className="font-bold text-[20px] font-[rubik]   ">Practice 1</h3>
+        <h1 className="font-bold text-[54px] font-[rubik] underline ">Hey there!</h1>
+        <h3 className="font-bold text-[20px] font-[rubik] ">Practice 1</h3>
         <Link to="/" className="ml-auto">
           <button className="px-4 py-1 bg-gray-200 text-black rounded-[10px] my-3">Go Back</button>
         </Link>
       </div>
-      <div className="flex flex-col gap-3 my-5">
-        <p>In this page we can take a look to the basic structure of a Remix route.</p>
-        <p>There are 5 main parts to have a complete Remix route.</p>
-        <h3 className="font-bold text-[20px] font-[rubik] ">The main component:</h3>
-        <p>
-          Here we have the main component which is the function exported as default where display
-          our JSX.
-        </p>
+      <div className="flex flex-col gap-3 my-10">
+        <div className="flex flex-col gap-3">
+          <p>In this page we can take a look to the basic structure of a Remix route.</p>
+          <p>There are 5 main parts to have a complete Remix route.</p>
+          <p>Let's break it down:</p>
+          <ul className="list-disc pl-8  ">
+            <li>Link Function</li>
+            <li>Meta Function</li>
+            <li>Loader Function</li>
+            <li>Action Function</li>
+            <li>Component Function</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-bold text-[20px] font-[rubik] ">Link Function</h3>
+        </div>
+        <div className="rounded-[10px] my-5 overflow-hidden drop-shadow-[12px_12px_0px_rgba(0,0,0,1)] border-white border-[2px]   ">
+          <div className="w-[100%] h-[30px] bg-white flex items-center pl-[10px]   ">
+            <i className="text-black  ">Link function</i>
+          </div>
+          <hr className="border-black border-[2px]"></hr>
+          <SyntaxHighlighter
+            language="text"
+            customStyle={{ background: "black", color: "white" }}
+            showLineNumbers
+          >
+            {snippet1}
+          </SyntaxHighlighter>
+        </div>
+        <form method="post">
+          <label>
+            Email
+            <input type="email" name="email" placeholder="email"></input>
+          </label>
+          <label>
+            Password
+            <input type="text" name="password" placeholder="password"></input>
+          </label>
+          <button type="submit">Enviar</button>
+        </form>
       </div>
-      <SyntaxHighlighter language="text">{snippet1}</SyntaxHighlighter>
-      <form method="post">
-        <label>
-          Email
-          <input type="email" name="email" placeholder="email"></input>
-        </label>
-        <label>
-          Password
-          <input type="text" name="password" placeholder="password"></input>
-        </label>
-        <button type="submit">Enviar</button>
-      </form>
     </article>
   );
 }
