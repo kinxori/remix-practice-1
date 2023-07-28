@@ -254,6 +254,16 @@ export default function LandingPage() {
             </SyntaxHighlighter>
           </div>
         </div>
+        <div className="flex flex-col gap-3">
+          <h3 className="font-bold text-[20px] font-[rubik] ">Component Function</h3>
+          <p>
+            The 5th part of a Remix route is the actual component function. Now, remember, this is
+            optional. If you want to have your route as a traditional component, add it. If you want
+            your route to be an API, just skip this function.
+          </p>
+          <p>Your component is going to be exported as default and return JSX.</p>
+          <p>Check it out:</p>
+        </div>
         <form method="post">
           <label>
             Email
