@@ -1,5 +1,10 @@
 import { Link, useActionData, useLoaderData } from "@remix-run/react";
 import favIcon from "~/assets/new-logo-kinxori.ico";
+import SyntaxHighlighter from "react-syntax-highlighter";
+
+const snippet1 = ` 
+  Hello there!
+`;
 
 // Loader to consume API
 
@@ -47,14 +52,12 @@ export default function LandingPage() {
       <div className="flex flex-col     ">
         <h1 className="font-bold text-[54px] font-[rubik] ">Hey there!</h1>
         <h3 className="font-bold text-[16px] font-[rubik]   ">Practice 1</h3>
-        <br></br>
         <Link to="/" className="ml-auto  ">
           <button className=" px-4 py-1  bg-gray-200 rounded-[10px] my-3">Go Back</button>
         </Link>
         <p>In this page we can take a look to the basic structure of a Remix route.</p>
-        <br></br>
+
         <p>There a 5 main functions to have a good Remix route.</p>
-        <br></br>
       </div>
       <div>
         <h3 className="font-bold text-[16px] font-[rubik]   ">The main component:</h3>
@@ -63,7 +66,7 @@ export default function LandingPage() {
           our JSX.
         </p>
       </div>
-
+      <SyntaxHighlighter language="text">{snippet1}</SyntaxHighlighter>
       <form method="post">
         <label>
           Email
