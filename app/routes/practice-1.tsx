@@ -43,11 +43,19 @@ const snippetLoaderFunction = `
   };
 
   export default function MyComponent(){
-    // Make sure to add the useLoaderData hook to call your loader
+    // Make sure to add the useLoaderData hook to call your loader into your component
     const dataLoader = useLoaderData();
     return <h1> Hello World! </div>
   }
+`;
 
+const snippetActionFunction = `
+  export const action = async (request) => {
+    const formData = await request.formData();
+    // You can console log it to test it
+    // console.log("data: ", formData.get("email"));
+    return formData;
+};
 `;
 
 // Loader to consume API
@@ -61,7 +69,7 @@ export const loader = async () => {
 
 export const action = async ({ request }: any) => {
   const formData = await request.formData();
-  console.log("data ", formData.get("email"));
+  console.log("data: ", formData.get("email"));
   return null;
 };
 
