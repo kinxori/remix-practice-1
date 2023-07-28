@@ -80,6 +80,16 @@ const snippetActionFunction = `
   }
 `;
 
+const snippetComponentFunction = `
+  export default function MyComponent(){
+    return (
+      <article>
+        <h1> Hello World! </div>
+      </article>
+    ) 
+  }
+`;
+
 // Loader to consume API
 
 export const loader = async () => {
@@ -263,6 +273,19 @@ export default function LandingPage() {
           </p>
           <p>Your component is going to be exported as default and return JSX.</p>
           <p>Check it out:</p>
+          <div className="rounded-[10px] my-5 overflow-hidden drop-shadow-[12px_12px_0px_rgba(0,0,0,1)] border-white border-[2px]   ">
+            <div className="w-[100%] h-[30px] bg-white flex items-center pl-[10px]   ">
+              <i className="text-black  ">Component function</i>
+            </div>
+            <hr className="border-black border-[2px]"></hr>
+            <SyntaxHighlighter
+              language="text"
+              customStyle={{ background: "black", color: "white" }}
+              showLineNumbers
+            >
+              {snippetComponentFunction}
+            </SyntaxHighlighter>
+          </div>
         </div>
         <form method="post">
           <label>
