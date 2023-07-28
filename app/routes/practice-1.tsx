@@ -42,11 +42,26 @@ const snippetLoaderFunction = `
     return data;
   };
 
+  // Make sure to add the useLoaderData hook to call your loader into your component
+
   export default function MyComponent(){
-    // Make sure to add the useLoaderData hook to call your loader into your component
     const dataLoader = useLoaderData();
     return <h1> Hello World! </div>
   }
+`;
+
+const snippetFormJSX = `
+  <form method="post">
+    <label>
+      Email
+      <input type="email" name="email" placeholder="email"></input>
+    </label>
+    <label>
+      Password
+      <input type="text" name="password" placeholder="password"></input>
+    </label>
+    <button type="submit">Send</button>
+  </form>
 `;
 
 const snippetActionFunction = `
@@ -55,7 +70,14 @@ const snippetActionFunction = `
     // You can console log it to test it
     // console.log("data: ", formData.get("email"));
     return formData;
-};
+  };
+
+  // Make sure to add the useActionData hook to call your action into your component
+
+  export default function MyComponent(){
+    const dataLoader = useLoaderData();
+    return <h1> Hello World! </div>
+  }
 `;
 
 // Loader to consume API
@@ -199,6 +221,38 @@ export default function LandingPage() {
             database.
           </p>
           <p>But this is quite a little bit tricky because you need 1 Form to do it.</p>
+          <p>Your Form could like like this:</p>
+          <div className="rounded-[10px] my-5 overflow-hidden drop-shadow-[12px_12px_0px_rgba(0,0,0,1)] border-white border-[2px]   ">
+            <div className="w-[100%] h-[30px] bg-white flex items-center pl-[10px]   ">
+              <i className="text-black  ">Form JSX</i>
+            </div>
+            <hr className="border-black border-[2px]"></hr>
+            <SyntaxHighlighter
+              language="text"
+              customStyle={{ background: "black", color: "white" }}
+              showLineNumbers
+            >
+              {snippetFormJSX}
+            </SyntaxHighlighter>
+          </div>
+          <p>
+            Here it's SUPER important that you add the <i>method='post'</i> to your Form. This way
+            you can "catch" your entry data in the "request" of the Action function.
+          </p>
+          <p>Your Action function should look something like this:</p>
+          <div className="rounded-[10px] my-5 overflow-hidden drop-shadow-[12px_12px_0px_rgba(0,0,0,1)] border-white border-[2px]   ">
+            <div className="w-[100%] h-[30px] bg-white flex items-center pl-[10px]   ">
+              <i className="text-black  ">Action function</i>
+            </div>
+            <hr className="border-black border-[2px]"></hr>
+            <SyntaxHighlighter
+              language="text"
+              customStyle={{ background: "black", color: "white" }}
+              showLineNumbers
+            >
+              {snippetActionFunction}
+            </SyntaxHighlighter>
+          </div>
         </div>
         <form method="post">
           <label>
