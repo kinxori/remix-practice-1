@@ -17,6 +17,16 @@ const snippetLinkFunction = `
   };
 `;
 
+const snippetMetaFunction = `
+  export const meta = () => {
+    return [
+      {
+        title: "Practice 1",
+      },
+    ];
+  };
+`;
+
 // Loader to consume API
 
 export const loader = async () => {
@@ -98,6 +108,27 @@ export default function LandingPage() {
               showLineNumbers
             >
               {snippetLinkFunction}
+            </SyntaxHighlighter>
+          </div>
+        </div>
+        <div className="flex flex-col gap-3">
+          <h3 className="font-bold text-[20px] font-[rubik] ">Meta Function</h3>
+          <p>
+            Meta function works the same way as Link function. You have to pass an Array of objects
+            containing your key-value for your traditional Meta tags.
+          </p>
+          <p>Check it out:</p>
+          <div className="rounded-[10px] my-5 overflow-hidden drop-shadow-[12px_12px_0px_rgba(0,0,0,1)] border-white border-[2px]   ">
+            <div className="w-[100%] h-[30px] bg-white flex items-center pl-[10px]   ">
+              <i className="text-black  ">Meta function</i>
+            </div>
+            <hr className="border-black border-[2px]"></hr>
+            <SyntaxHighlighter
+              language="text"
+              customStyle={{ background: "black", color: "white" }}
+              showLineNumbers
+            >
+              {snippetMetaFunction}
             </SyntaxHighlighter>
           </div>
         </div>
